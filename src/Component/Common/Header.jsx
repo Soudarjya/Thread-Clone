@@ -6,8 +6,8 @@ import { HiMenuAlt3 } from "react-icons/hi";
 function Header() {
     return (
         <>
-            <Stack height={52} flexDirection={"row"} justifyContent={"space-around"} alignItems={"center"} position={"sticky"} top={0} py={1}>
-                <img src="Threads-logo-white-bg.png" alt="logo" height={40} width={60} />
+            <Stack height={52} flexDirection={"row"} justifyContent={"space-around"} alignItems={"center"} position={"sticky"} top={0} py={5}>
+                <img src="/Threads-logo-white-bg.png" alt="logo" height={40} width={60} />
                 <Stack
                     justifyContent="center"
                     bgcolor="lavender"
@@ -21,7 +21,6 @@ function Header() {
                 >
                     <Navbar />
                 </Stack>
-
                 <HiMenuAlt3 fontSize={30} className='image-icon' />
             </Stack>
         </>
