@@ -10,6 +10,7 @@ import Threads from './Pages/Protected/Profile/Threads';
 import Replies from './Pages/Protected/Profile/Replies';
 import Repost from './Pages/Protected/Profile/Repost';
 import SinglePost from './Pages/Protected/SinglePost';
+import Register from './Pages/Register';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='replies/:id' element={<Replies />} />
               <Route path='reposts/:id' element={<Repost />} />
             </Route>
+            <Route path='/register' element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
