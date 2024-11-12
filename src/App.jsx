@@ -9,6 +9,7 @@ import ProfileLayout from './Pages/Protected/Profile/ProfileLayout';
 import Threads from './Pages/Protected/Profile/Threads';
 import Replies from './Pages/Protected/Profile/Replies';
 import Repost from './Pages/Protected/Profile/Repost';
+import SinglePost from './Pages/Protected/SinglePost';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           {/* Define the layout and routes under ProtectedLayout */}
           <Route path='/' element={<ProtectedLayout />}>
             <Route index element={<Home />} /> {/* Home will load at the root path `/` */}
-            <Route path='post/:id' element={<h1>Single Post</h1>} />
+            <Route path='post/:id' element={<SinglePost />} />
             <Route path='search' element={<Search />} />
             <Route path='profile' element={<ProfileLayout />}>
               <Route path='threads/:id' element={<Threads />} />
