@@ -9,10 +9,14 @@ function PostTwo() {
     return (
         <>
             <Stack flexDirection={"column"} justifyContent={"space-between"} gap={1}>
-                <Stack >
-                    <Stack flexDirection={"column"} >
-                        <Typography variant="h5" fontWeight={"bold"} fontSize={"1.2rem"}>Abhishek</Typography>
-                        <Typography variant="h6" color={"GrayText"} fontSize={"0.8rem"}>Dev</Typography>
+                <Stack>
+                    <Stack flexDirection={"column"}  >
+                        <Typography variant="h6" fontWeight="bold" >
+                            John Doe
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" sx={{marginBottom: "10px"}} lineHeight={"12px"}>
+                            Tech enthusiast and developer
+                        </Typography>
                     </Stack>
                     <img src="/error-bg.png" alt="" loading='lazy' width={"400px"} height={"auto"} />
                 </Stack>

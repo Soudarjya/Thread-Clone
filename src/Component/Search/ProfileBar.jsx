@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Button, Typography, Stack, AvatarGroup } from '@mui/material';
 
-const ProfileBar = ({ user }) => {
+const ProfileBar = () => {
     return (
         <Stack
             direction="row"
@@ -16,7 +16,7 @@ const ProfileBar = ({ user }) => {
                 mx: "auto",
             }}
         >
-            <Avatar src="" alt={user.name} sx={{ width: 56, height: 56 }} />
+            <Avatar src="" alt="profileimage" sx={{ width: 56, height: 56 }} />
             <Stack flex={1} flexDirection={"column"} alignItems={"start"} justifyContent={"start"}>
                 <Typography variant="h6" fontWeight="bold">
                     John Doe

@@ -8,7 +8,7 @@ import PostTwo from '../../Component/Home/Post/PostTwo';
 function Post() {
     return (
         <>
-            <Box flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} borderBottom={"3px solid gray"} minHeight={"auto"} p={2}  mx={"auto"} width={"70%"} boxShadow={"1px 1px 5px gray"} sx={{
+            <Box flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} borderBottom={"3px solid gray"} minHeight={"auto"} p={3}  mx={"auto"} width={"95%"} boxShadow={"1px 1px 5px gray"} sx={{
                 ":hover":{
                     boxShadow: "5px 5px 10px gray"
                 }

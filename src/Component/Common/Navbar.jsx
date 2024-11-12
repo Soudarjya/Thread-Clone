@@ -16,11 +16,11 @@ function Navbar() {
             maxWidth="100%"
             fontSize={28}
         >
-            <Link to='/'><ImHome color='black'/></Link>
-            <Link to='/search'><FiSearch color='black' /></Link>
-            <Link to='/edit'><FaEdit color='black' /></Link>
-            <Link to='/likes'><FaRegHeart color='black' /></Link>
-            <Link to='/profile'><FaRegCircleUser color='black' /></Link>
+            <Link to={'/'}><ImHome color='black'/></Link>
+            <Link to={'/search'}><FiSearch color='black' /></Link>
+            <Link to={'/profile/threads/1'}><FaEdit color='black' /></Link>
+            <Link to={'/likes'}><FaRegHeart color='black' /></Link>
+            <Link to={'/profile'}><FaRegCircleUser color='black' /></Link>
         </Stack>
     );
 }

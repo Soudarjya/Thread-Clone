@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Input />
-      <Stack flexDirection={"column"} gap={5} mb={10}>
+      <Stack flexDirection={"column"} gap={5} mb={10} width={"100%"}>
         <Post />
         <Post />
         <Post />

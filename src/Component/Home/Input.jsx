@@ -4,7 +4,7 @@ import React from 'react'
 function Input() {
     return (
         <>
-            <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} width={"70%"} height={28} p={4} borderBottom={"2px solid black"} my={5} mx={"auto"}>
+            <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"} width={"90%"} height={28} p={4} borderBottom={"2px solid black"} my={6} mx={"auto"}>
                 <Stack flexDirection={"row"}  alignItems={"center"} gap={2}>
                     <Avatar src='' alt='Aj' />
                     <Typography color={"GrayText"}>Start a thread...</Typography>

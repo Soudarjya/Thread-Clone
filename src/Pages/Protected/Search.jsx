@@ -9,9 +9,9 @@ function Search() {
     <Stack flexDirection={"column"} alignItems={"center"} p={5}>
       <SearchInput />
       <Stack width={"100%"} gap={2}>
-      <ProfileBar />
-      <ProfileBar />
-      <ProfileBar />
+        <ProfileBar />
+        <ProfileBar />
+        <ProfileBar />
       </Stack>
     </Stack>
   )
