@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Container, Box, TextField, Button, Typography, Avatar, Stack, capitalize } from '@mui/material';
+import { Container, Box, TextField, Button, Typography, Avatar, Stack } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 

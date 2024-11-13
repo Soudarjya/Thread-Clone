@@ -11,24 +11,31 @@ import Replies from './Pages/Protected/Profile/Replies';
 import Repost from './Pages/Protected/Profile/Repost';
 import SinglePost from './Pages/Protected/SinglePost';
 import Register from './Pages/Register';
+import Error from './Pages/Error';
+import AddPost from './Component/Modals/AddPost'
 
 function App() {
+  const data = true;
+
   return (
     <Box minHeight={"100vh"}>
       <BrowserRouter>
         <Routes>
-          {/* Define the layout and routes under ProtectedLayout */}
-          <Route path='/' element={<ProtectedLayout />}>
-            <Route index element={<Home />} /> {/* Home will load at the root path `/` */}
-            <Route path='post/:id' element={<SinglePost />} />
-            <Route path='search' element={<Search />} />
-            <Route path='profile' element={<ProfileLayout />}>
-              <Route path='threads/:id' element={<Threads />} />
-              <Route path='replies/:id' element={<Replies />} />
-              <Route path='reposts/:id' element={<Repost />} />
+          {data ? (
+            <Route path='/' element={<ProtectedLayout />}>
+              <Route index element={<Home />} /> {/* Home will load at the root path `/` */}
+              <Route path='post/:id' element={<SinglePost />} />
+              <Route path='addpost' element={<AddPost />} />
+              <Route path='search' element={<Search />} />
+              <Route path='profile' element={<ProfileLayout />}>
+                <Route path='threads/:id' element={<Threads />} />
+                <Route path='replies/:id' element={<Replies />} />
+                <Route path='reposts/:id' element={<Repost />} />
+              </Route>
             </Route>
-            <Route path='/register' element={<Register />} />
-          </Route>
+          ) : (<Route path='/' element={<Register />} />
+          )}
+          <Route path='*' element={<Error />} />
         </Routes>
       </BrowserRouter>
     </Box>

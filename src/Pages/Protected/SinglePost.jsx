@@ -1,10 +1,13 @@
 import { Button, Stack, TextField } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Post from '../../Component/Home/Post'
 import Comments from '../../Component/Home/Post/Comments'
 import { RiSendPlaneFill } from "react-icons/ri";
 
 function SinglePost() {
+
+    const [comments, setComments] = useState('');
+
     return (
         <>
             <Stack flexDirection={"column"} my={5} gap={2} py={2}>
@@ -14,7 +17,9 @@ function SinglePost() {
                     <Comments />
                 </Stack>
                 <Stack flexDirection={"row"} width={"80%"} gap={1} alignItems={"center"} mx={"auto"} >
-                    <TextField variant='outlined' autoFocus placeholder='Comment here...' sx={{
+                    <TextField variant='outlined' autoFocus placeholder='Comment here...' 
+                    onChange={(e)=> setComments(e.target.value)}
+                    sx={{
                         width: "90%",
                         mx: "auto",
                         p: 1,

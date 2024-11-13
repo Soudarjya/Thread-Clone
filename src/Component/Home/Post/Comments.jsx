@@ -1,8 +1,9 @@
-import { Avatar, Stack, Typography, IconButton } from '@mui/material';
+import { Avatar, Stack, Typography, IconButton, useMediaQuery } from '@mui/material';
 import React from 'react';
 import { IoIosMore } from 'react-icons/io';
 
 function Comments() {
+    const _700 = useMediaQuery("(min-width : 700px)");
     return (
         <Stack
             direction="row"
@@ -19,7 +20,7 @@ function Comments() {
                     backgroundColor: '#fafafa', // Light background change on hover
                 },
             }} >
-            <Stack direction="row" gap={2} alignItems="center">
+            <Stack direction="row" gap={_700 ? 2 : 1} alignItems="center">
                 <Avatar
                     src=''
                     alt="User Avatar"
@@ -40,7 +41,7 @@ function Comments() {
             <Stack direction="row" gap={1} alignItems="center" fontSize="0.875rem" color="text.secondary">
                 <Typography variant="caption">24min ago</Typography>
                 <IconButton>
-                    <IoIosMore size={20} />
+                    <IoIosMore size={_700 ? 28 : 20} />
                 </IconButton>
             </Stack>
         </Stack>
