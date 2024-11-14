@@ -31,6 +31,7 @@ function ProfileLayout() {
                     <FaInstagram size={_300 ? 40 : 24} />
                 </Stack>
             </Stack>
+            <Link>
             <Button size='large' sx={{
                 color: 'black',
                 width: _700 ? "800px" : "90%",
@@ -50,6 +51,7 @@ function ProfileLayout() {
             }}>
                 Edit Profile
             </Button>
+            </Link>
             <Stack flexDirection={"row"} justifyContent={"space-evenly"} my={5} pb={2} borderBottom={"2px solid gray"} fontSize={_500 ? "1.2rem" : _300 ? "1.1rem" : "0.9rem"} width={_700 ? "800px" : "90%"} mx={"auto"}>
                 <Link to={'/profile/threads/1'} style={{ textDecoration: 'none', color: 'black' }}>Threads</Link>
                 <Link to={'/profile/replies/1'} style={{ textDecoration: 'none', color: 'black' }}>Replies</Link>

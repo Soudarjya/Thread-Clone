@@ -1,97 +1,79 @@
-import React from 'react';
-import { Avatar, Box, Stack, Typography, TextField, IconButton, Button } from '@mui/material';
-import { MdInsertPhoto, MdGif, MdTag, MdFormatListBulleted, MdLocationOn, MdClose } from 'react-icons/md';
+import React, { useRef, useState } from 'react'
+import { Avatar, Box, Button, Dialog, DialogContent, DialogTitle, Stack, Typography, useMediaQuery } from '@mui/material'
+import { RxCross2 } from 'react-icons/rx';
+import { FaImages } from 'react-icons/fa6';
 
-function NewThread() {
+function AddPost() {
+
+    const _300 = useMediaQuery("(min-width: 300px)");
+    const _500 = useMediaQuery("(min-width: 500px)");
+    const _700 = useMediaQuery("(min-width: 700px)");
+
+    const [text, setText] = useState("");
+    const [media, setMedia] = useState(null);
+
+
+    const mediaRef = useRef();
+
+
+    const handleClose = () => {
+
+    }
+
+    const handleMediaRef = () => {
+        mediaRef.current.click();
+    }
+
+    const handlePost = ()=>{
+
+    }
+
     return (
-        <Box
-            marginTop={10}
-            marginBottom={5}
-            bgcolor={"black"}
-            sx={{
-                width: '90%',
-                maxWidth: 500,
-                bgcolor: 'white',
-                color: 'text.primary',
-                borderRadius: 3,
-                boxShadow: "3px 3px 10px gray",
-                p: 2,
-                mx: 'auto',
-            }}
-        >
-            {/* Header */}
-            <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
-                <IconButton edge="start" color="inherit" aria-label="cancel">
-                    <MdClose />
-                </IconButton>
-                <Typography variant="h6" fontWeight="bold">
-                    New thread
-                </Typography>
-                <IconButton edge="end" color="inherit" aria-label="attachment">
-                    <MdFormatListBulleted />
-                </IconButton>
-            </Stack>
-
-            <Stack direction="row" spacing={2} alignItems="flex-start">
-                {/* User Avatar */}
-                <Avatar alt="User" src="" sx={{ width: 48, height: 48 }} />
-
-                {/* Input and Icons */}
-                <Stack flexGrow={1} spacing={1}>
-                    {/* Username and Input */}
-                    <Typography variant="subtitle2" color="text.primary">
-                        theonly.abhii_
-                    </Typography>
-                    <TextField
-                        variant="outlined"
-                        placeholder="What's new?"
-                        multiline
-                        rows={3}
-                        fullWidth
-                        sx={{
-                            '& .MuiOutlinedInput-root': {
-                                borderRadius: 2,
-                                bgcolor: 'background.paper',
-                                fontSize: '0.9rem',
-                            },
-                        }}
-                    />
-
-                    {/* Icons Row */}
-                    <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mt: 1 }}>
-                        <Stack direction="row" spacing={1}>
-                            <IconButton color="primary"><MdInsertPhoto /></IconButton>
-                            <IconButton color="primary"><MdGif /></IconButton>
-                            <IconButton color="primary"><MdTag /></IconButton>
-                            <IconButton color="primary"><MdFormatListBulleted /></IconButton>
-                            <IconButton color="primary"><MdLocationOn /></IconButton>
+        <>
+            <Dialog open={true} onClose={handleClose} fullWidth fullScreen={_700 ? false : true}>
+                <Box position={"absolute"} top={20} right={20} onClick={handleClose}>
+                    <RxCross2 size={28} />
+                </Box>
+                <DialogTitle variant='h5' textAlign={"center"} mb={5}>
+                    New Thread
+                </DialogTitle>
+                <DialogContent>
+                    <Stack flexDirection={"row"} gap={2} mb={5}>
+                        <Avatar src='' alt='' />
+                        <Stack gap={_700 ? 0.8 : 1}>
+                            <Typography variant='h6' fontWeight={"bold"} fontSize={"1rem"}>rohan_11</Typography>
+                            <textarea onChange={(e) => setText(e.target.value)} cols={_500 ? 40 : 25} rows={4} placeholder='Start a thread...' autoFocus className='textArea'></textarea>
+                            {media && <img src={URL.createObjectURL(media)} alt="" width={_500 ? 300 : _300 ? 200 : 100}/>}
+                            <FaImages size={20} onClick={handleMediaRef} />
+                            <input type="file" accept='image/*' className='file' ref={mediaRef} onChange={(e) => setMedia(e.target.files[0])} />
                         </Stack>
-                        <Typography variant="body2" color="text.secondary">
-                            Anyone can reply & quote
-                        </Typography>
                     </Stack>
-
-                    {/* Post Button */}
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        sx={{
-                            mt: 2,
-                            borderRadius: 2,
-                            textTransform: 'none',
-                            fontWeight: 'bold',
-                            width: '60px',
-                            alignSelf: 'flex-end',
-                            bgcolor: 'blue', // Disabled look
-                            color: 'white',
-                        }}
-                    >
-                        Post
-                    </Button>
-                </Stack>
-            </Stack>
-        </Box>
-    );
+                    <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"space-between"}>
+                        <Typography variant='h6' fontSize={"1rem"} color={'gray'}>AnyOne can reply</Typography>
+                        <Button
+                            onClick={handlePost}
+                            variant="contained"
+                            color="primary"
+                            sx={{
+                                mt: 2,
+                                borderRadius: 2,
+                                textTransform: 'none',
+                                fontWeight: 'bold',
+                                width: '60px',
+                                alignSelf: 'flex-end',
+                                bgcolor: 'blue', // Disabled look
+                                color: 'white',
+                                cursor: "pointer"
+                            }}
+                        >
+                            Post
+                        </Button>
+                    </Stack>
+                </DialogContent>
+            </Dialog>
+        </>
+    )
 }
 
-export default NewThread;
+export default AddPost
+

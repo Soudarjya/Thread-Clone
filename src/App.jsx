@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Box } from '@mui/material';
 import ProtectedLayout from './Pages/Protected/ProtectedLayout';
