@@ -27,7 +27,7 @@ function Navbar() {
             <IconLink to="/" icon={<ImHome size={iconSize} />} className='links'/>
             <IconLink to="/search" icon={<FiSearch size={iconSize} className='links'/>} />
             <IconLink to="/addpost" icon={<FaEdit size={iconSize} className='links'/>} />
-            <IconLink to="/likes" icon={<FaRegHeart size={iconSize} className='links'/>} />
+            <IconLink to="/likepost" icon={<FaRegHeart size={iconSize} className='links'/>} />
             <IconLink to="/profile/threads/1" icon={<FaRegCircleUser size={iconSize} className='links'/>} />
         </Stack>
     );

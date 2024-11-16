@@ -13,6 +13,7 @@ import SinglePost from './Pages/Protected/SinglePost';
 import Register from './Pages/Register';
 import Error from './Pages/Error';
 import AddPost from './Component/Modals/AddPost'
+import LikePost from './Pages/Protected/LikePost';
 
 function App() {
   const data = true;
@@ -27,6 +28,7 @@ function App() {
               <Route path='post/:id' element={<SinglePost />} />
               <Route path='addpost' element={<AddPost />} />
               <Route path='search' element={<Search />} />
+              <Route path='likepost' element={<LikePost />} />
               <Route path='profile' element={<ProfileLayout />}>
                 <Route path='threads/:id' element={<Threads />} />
                 <Route path='replies/:id' element={<Replies />} />
