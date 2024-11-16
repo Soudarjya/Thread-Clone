@@ -17,7 +17,7 @@ function AddPost() {
 
 
     const handleClose = () => {
-
+        window.location.href='/';
     }
 
     const handleMediaRef = () => {
@@ -39,7 +39,7 @@ function AddPost() {
                 </DialogTitle>
                 <DialogContent>
                     <Stack flexDirection={"row"} gap={2} mb={5}>
-                        <Avatar src='' alt='' />
+                        <Avatar src='' alt=''/>
                         <Stack gap={_700 ? 0.8 : 1}>
                             <Typography variant='h6' fontWeight={"bold"} fontSize={"1rem"}>rohan_11</Typography>
                             <textarea onChange={(e) => setText(e.target.value)} cols={_500 ? 40 : 25} rows={4} placeholder='Start a thread...' autoFocus className='textArea'></textarea>
